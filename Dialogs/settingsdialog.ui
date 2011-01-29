@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingsDialog</class>
+ <widget class="QDialog" name="SettingsDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>582</width>
+    <height>591</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../Resources/TradieTrakka.qrc">
+    <normaloff>:/Settings</normaloff>:/Settings</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="settingsTabBox">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="businessTab">
+      <attribute name="title">
+       <string>Business</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="businessGroup">
+         <property name="title">
+          <string>Your Business Settings</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="businessNameLabel">
+            <property name="text">
+             <string>Business Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="3">
+           <widget class="QLineEdit" name="businessNameEdit"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="mobileLabel">
+            <property name="text">
+             <string>Mobile:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="mobileEdit"/>
+          </item>
+          <item row="4" column="2">
+           <widget class="QLabel" name="phoneLabel">
+            <property name="text">
+             <string>PH:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="3">
+           <widget class="QLineEdit" name="phoneEdit"/>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="faxLabel">
+            <property name="text">
+             <string>FAX:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="faxEdit"/>
+          </item>
+          <item row="5" column="2">
+           <widget class="QLabel" name="emailLabel">
+            <property name="text">
+             <string>Email:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QLineEdit" name="emailEdit"/>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="wwwLabel">
+            <property name="text">
+             <string>WWW:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1" colspan="3">
+           <widget class="QLineEdit" name="wwwEdit"/>
+          </item>
+          <item row="7" column="0" colspan="4">
+           <widget class="QGroupBox" name="addressGroup">
+            <property name="title">
+             <string>Address</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0">
+              <widget class="QLabel" name="unitLabel">
+               <property name="text">
+                <string>Unit:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QLineEdit" name="unitEdit">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="houseNumberLabel">
+               <property name="text">
+                <string>Number:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QLineEdit" name="houseNumberEdit">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>50</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>50</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="4" colspan="3">
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>241</width>
+                 <height>24</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item row="1" column="1" colspan="6">
+              <widget class="QLineEdit" name="streetEdit"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="streetNameLabel">
+               <property name="text">
+                <string>Street:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="suburbLabel">
+               <property name="text">
+                <string>Suburb:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1" colspan="4">
+              <widget class="QLineEdit" name="suburbEdit"/>
+             </item>
+             <item row="2" column="5">
+              <widget class="QLabel" name="potcodeLabel">
+               <property name="text">
+                <string>Postcode:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="6">
+              <widget class="QLineEdit" name="postcodeEdit">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="cityLabel">
+               <property name="text">
+                <string>City:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1" colspan="4">
+              <widget class="QLineEdit" name="cityEdit"/>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="stateLabel">
+               <property name="text">
+                <string>State:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1" colspan="4">
+              <widget class="QComboBox" name="stateCombo"/>
+             </item>
+             <item row="5" column="1">
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="fNameLabel">
+            <property name="text">
+             <string>First Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1" colspan="3">
+           <widget class="QLineEdit" name="fNameEdit"/>
+          </item>
+          <item row="2" column="1" colspan="3">
+           <widget class="QLineEdit" name="lNameEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="lNameLabel">
+            <property name="text">
+             <string>Last Name:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1" colspan="3">
+           <widget class="QLineEdit" name="abnEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="abnLabel">
+            <property name="text">
+             <string>ABN:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="logoTab">
+      <attribute name="title">
+       <string>Logo</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QGroupBox" name="businessLogoGroup">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>Business Logo</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="browseButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" rowspan="3">
+           <widget class="QLabel" name="logoLabel">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="clearButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>Clear</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <spacer name="verticalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Minimum</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>82</width>
+              <height>131</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>238</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Headers &amp;&amp; Footers</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QGroupBox" name="quoteHeaderGroup">
+         <property name="title">
+          <string>Quote Header Text</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="0" column="0">
+           <widget class="QPlainTextEdit" name="quoteHeaderEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="quoteFooterGroup">
+         <property name="title">
+          <string>Quote Footer Text</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_6">
+          <item row="0" column="0">
+           <widget class="QPlainTextEdit" name="quoteFooterEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="invoiceHeaderGroup">
+         <property name="title">
+          <string>Invoice Header Text</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_9">
+          <item row="0" column="0">
+           <widget class="QPlainTextEdit" name="invoiceHeaderEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="invoiceFooterGroup">
+         <property name="title">
+          <string>Invoice Footer Text</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="0" column="0">
+           <widget class="QPlainTextEdit" name="invoiceFooterEdit"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="advancedTab">
+      <attribute name="title">
+       <string>Advanced</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QGroupBox" name="databaseGroup">
+         <property name="title">
+          <string>Database</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="dbNameLabel">
+            <property name="text">
+             <string>TradieTrakka Database: </string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLineEdit" name="dbNameEdit">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="changeDBButton">
+            <property name="text">
+             <string>Change</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>250</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Apply|QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>businessNameEdit</tabstop>
+  <tabstop>fNameEdit</tabstop>
+  <tabstop>lNameEdit</tabstop>
+  <tabstop>abnEdit</tabstop>
+  <tabstop>mobileEdit</tabstop>
+  <tabstop>phoneEdit</tabstop>
+  <tabstop>faxEdit</tabstop>
+  <tabstop>emailEdit</tabstop>
+  <tabstop>wwwEdit</tabstop>
+  <tabstop>unitEdit</tabstop>
+  <tabstop>houseNumberEdit</tabstop>
+  <tabstop>streetEdit</tabstop>
+  <tabstop>suburbEdit</tabstop>
+  <tabstop>postcodeEdit</tabstop>
+  <tabstop>cityEdit</tabstop>
+  <tabstop>stateCombo</tabstop>
+  <tabstop>buttonBox</tabstop>
+  <tabstop>settingsTabBox</tabstop>
+  <tabstop>browseButton</tabstop>
+  <tabstop>clearButton</tabstop>
+  <tabstop>databaseGroup</tabstop>
+  <tabstop>dbNameEdit</tabstop>
+  <tabstop>changeDBButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../Resources/TradieTrakka.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>SettingsDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>SettingsDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

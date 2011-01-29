@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/watermark.png</file>
+        <file>icons/folder_database.png</file>
+        <file alias="Logo">icons/logo.png</file>
+        <file>icons/draw.png</file>
+        <file alias="LogoSmall">icons/smallLogo.png</file>
+        <file>icons/drawerFront.png</file>
+        <file>icons/chaintitle.png</file>
+        <file alias="Splash">icons/splash.png</file>
+        <file alias="PDFIcon">icons/pdfsave.png</file>
+        <file alias="PrintIcon">icons/print.png</file>
+        <file alias="ContactIcon">icons/contact.2.png</file>
+        <file alias="ToolListIcon">icons/toollist.png</file>
+        <file alias="LabourIcon">icons/tradierep.png</file>
+        <file alias="CompanyIcon">icons/business.png</file>
+        <file>icons/close.png</file>
+        <file>icons/paper.png</file>
+        <file alias="PaidIcon">icons/PaidStamp.png</file>
+        <file alias="PastDueIcon">icons/PastDue.png</file>
+        <file alias="CalcIcon">icons/Calculator.png</file>
+        <file alias="CloseIcon">icons/close2.png</file>
+        <file alias="ExitIcon">icons/exit.png</file>
+        <file alias="ExpenseIcon">icons/expense.png</file>
+        <file alias="InvoiceIcon">icons/invoice.png</file>
+        <file alias="QuoteIcon">icons/quote.png</file>
+        <file alias="ReportsIcon">icons/report.png</file>
+        <file alias="SearchIcon">icons/search.png</file>
+        <file alias="Settings">icons/settings.png</file>
+        <file alias="MaterialIcon">icons/materials.png</file>
+        <file alias="BackGround">icons/bg.png</file>
+    </qresource>
+</RCC>
