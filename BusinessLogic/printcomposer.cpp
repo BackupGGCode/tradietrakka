@@ -39,6 +39,8 @@ void PrintComposer::printString(QString html, PrintComposer::OutputType outputTy
 
     output.addResource(QTextDocument::ImageResource, QUrl("logo://logo"), QVariant(logo));
 
+    qDebug() << html;
+
     if(outputType == PrintComposer::Print)
     {
         QPrintDialog printDialog(&printer);
@@ -589,7 +591,7 @@ QString PrintComposer::breakdownString(QDate startDate, QDate endDate, DBaseCtrl
         materialsList << pc.basBreakdownTable(matQuery.value(0).toString(),
                                               matQuery.value(1).toString(),
                                               matQuery.value(2).toString(),
-                                              matQuery.value(3).toDouble());
+                                              matQuery.value(2).toDouble());
 
         materialsTotal += matQuery.value(2).toDouble() * matQuery.value(1).toDouble();
         materialsGST += matQuery.value(2).toDouble() * matQuery.value(1).toDouble() / 11;

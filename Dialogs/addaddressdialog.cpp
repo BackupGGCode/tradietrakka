@@ -135,6 +135,11 @@ void AddAddressDialog::on_buttonBox_accepted()
     done(addressID);
 }
 
+void AddAddressDialog::closeEvent(QCloseEvent *)
+{
+    on_buttonBox_rejected();
+}
+
 /**
   * If the cancel button is clicked, and the address is not valid
   * delete the row that was inserted, else just revert any changes to the mapper

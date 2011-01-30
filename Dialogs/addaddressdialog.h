@@ -63,6 +63,7 @@ public:
 private:
     Ui::AddAddressDialog *ui;
     void initRegex();
+    void closeEvent(QCloseEvent *);
 
 private slots:
     void on_buttonBox_rejected();

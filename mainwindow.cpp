@@ -247,10 +247,6 @@ void MainWindow::aboutDialog()
     "Expenses.</p>"
     "<p><h4>Developers</h4>"
     "&nbsp;&nbsp;&nbsp;&nbsp;Steven Tucker and Craig Hume"
-    "<h4>Art Work</h4>"
-    "&nbsp;&nbsp;&nbsp;&nbsp;Danielle Jones"
-    "<h4>Project Management</h4>"
-    "&nbsp;&nbsp;&nbsp;&nbsp;Angela Lovett<br /></p>"
     "<p>TradieTrakka is licensed under the GNU General Public License<br />"
     "version 3.0 <a href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a></p>"
 

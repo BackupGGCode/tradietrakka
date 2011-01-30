@@ -350,6 +350,11 @@ void FindDialog::on_buttonBox_accepted()
         done(-1);
 }
 
+void FindDialog::closeEvent(QCloseEvent *)
+{
+    done(-1);
+}
+
 void FindDialog::on_buttonBox_rejected()
 {
     done(-1);

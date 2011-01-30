@@ -48,6 +48,7 @@ private:
     void initMaterialsDialog();
     void initLabourDialog();
     void initOverDueDialog();
+    void closeEvent(QCloseEvent *);
 
 public slots:
     void on_searchCombo_currentIndexChanged(QString newText);
