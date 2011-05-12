@@ -33,27 +33,27 @@ time, mark, audio, video
 
 body
 {
-	background: green;
+	background-image: url('images/wood.jpg');
+	background-repeat : repeat;
+
 } 
 
-#1
+#one
 {
-	border-style:solid;
-	border-width:5px;
-	border-color:yellow;
+	border:solid 5px yellow;
 }
 
-#2
+#two
 {
 	border:5px solid blue;
 }
 
-#3
+#three
 {
 	border:5px solid red;
 }
 
-#4
+#four
 {
 	border:5px solid purple;
 }
