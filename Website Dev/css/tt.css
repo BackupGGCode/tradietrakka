@@ -8,7 +8,7 @@
 
  
  /* this is an Eric Meyer style resetting of CSS parameters */
- html, body, div, span, applet, object, iframe,
+ html, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -33,10 +33,22 @@ time, mark, audio, video
 
 body
 {
-	background-image: url('images/wood.jpg');
-	background-repeat : repeat;
-
+	background-color: #d4b46b; 
+	background-image:url(images/wood.png);
+	background-repeat:repeat;
+	min-width:600px;
+	max-width:66%;
+	margin-left:auto;
+	margin-right:auto;
+	font-family:"Comic Sans MS", cursive, sans-serif;
 } 
+
+#body
+{
+	text-align:left;
+	background-color:white;
+	clear:both;
+}
 
 #one
 {
@@ -58,18 +70,26 @@ body
 	border:5px solid purple;
 }
 
+#navbar
+{
+	clear:both;
+	background-color: #000;
+}
+
 #navbar ul 
-{  
-        margin: 0;  
-        padding: 5px;  
-        list-style-type: none;  
-        text-align: center;  
-        background-color: #000;  
+{ 
+	margin: 0;  
+	padding: 5px;  
+	list-style-type: none;  
+	text-align: center;  
+	background-color: #000;
+	
 }  
   
 #navbar ul li 
 {   
         display: inline;  
+		float:left;
 }  
   
 #navbar ul li a 
@@ -85,3 +105,17 @@ body
         color: #000;  
         background-color: #fff;  
 }  
+
+#footer {
+	clear:both;
+	float:left;
+	width:100%;
+	border-top:1px solid #000;
+}
+#footer p {
+	text-align:center;
+	padding:10px;
+	font-size:0.8em;
+	margin:0;
+	color:;
+}
