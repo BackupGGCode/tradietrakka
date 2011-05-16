@@ -37,17 +37,31 @@ body
 	background-image:url(images/wood.png);
 	background-repeat:repeat;
 	min-width:600px;
-	max-width:66%;
+	width:600px;
 	margin-left:auto;
 	margin-right:auto;
+	margin-top:20px;
 	font-family:"Comic Sans MS", cursive, sans-serif;
 } 
+
+#logo
+{
+	height:25%;
+	width:25%;
+}
+
+#footlogo
+{
+	height:5%;
+	width:5%;
+}
 
 #body
 {
 	text-align:left;
 	background-color:white;
 	clear:both;
+	margin-top:20px;
 }
 
 #one
@@ -73,7 +87,9 @@ body
 #navbar
 {
 	clear:both;
-	background-color: #000;
+	background-color: #fff;
+	display:inline;
+	background: url(images/navwood.jpg);
 }
 
 #navbar ul 
@@ -82,35 +98,42 @@ body
 	padding: 5px;  
 	list-style-type: none;  
 	text-align: center;  
-	background-color: #000;
-	
+	background-color: #fff;
+	text-align:left;
 }  
   
 #navbar ul li 
 {   
         display: inline;  
-		float:left;
+		
 }  
   
 #navbar ul li a 
 {  
         text-decoration: none;  
         padding: .2em 1em;  
-        color: #fff;  
-        background-color: #000;  
+        color: #000;  
+        background-color: #fff;  
 }  
   
 #navbar ul li a:hover 
 {  
-        color: #000;  
-        background-color: #fff;  
+        color: #fff;  
+        background-color: #000;  
 }  
+
+#divide
+{
+	height:10px;
+	background-color:rgb(100,100,255);
+	margin: 10px 0px;
+}
 
 #footer {
 	clear:both;
 	float:left;
 	width:100%;
-	border-top:1px solid #000;
+	font-weight:bold;
 }
 #footer p {
 	text-align:center;
@@ -119,3 +142,4 @@ body
 	margin:0;
 	color:;
 }
+
