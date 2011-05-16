@@ -33,11 +33,11 @@ time, mark, audio, video
 
 body
 {
-	background-color: #d4b46b; 
-	background-image:url(images/wood.png);
+	/*background-color: #d4b46b; */
+	background-image:url(../images/wood.jpg);
 	background-repeat:repeat;
 	min-width:600px;
-	width:600px;
+	width:800px;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:20px;
@@ -59,29 +59,29 @@ body
 #body
 {
 	text-align:left;
-	background-color:white;
+	background:url(../images/notepaper.jpg);
 	clear:both;
 	margin-top:20px;
 }
 
 #one
 {
-	border:solid 5px yellow;
+	/*border:solid 5px yellow;*/
 }
 
 #two
 {
-	border:5px solid blue;
+	/*border:solid 5px yellow;*/
 }
 
 #three
 {
-	border:5px solid red;
+	/*border:solid 5px yellow;*/
 }
 
 #four
 {
-	border:5px solid purple;
+	/*border:solid 5px yellow;*/
 }
 
 #navbar
@@ -89,16 +89,16 @@ body
 	clear:both;
 	background-color: #fff;
 	display:inline;
-	background: url(images/navwood.jpg);
+	background: url(../images/dplate.jpg);
 }
 
 #navbar ul 
 { 
 	margin: 0;  
-	padding: 5px;  
+	padding: 0px;  
 	list-style-type: none;  
 	text-align: center;  
-	background-color: #fff;
+	background: url(../images/dplate.jpg);
 	text-align:left;
 }  
   
@@ -113,7 +113,7 @@ body
         text-decoration: none;  
         padding: .2em 1em;  
         color: #000;  
-        background-color: #fff;  
+        background: url(../images/dplate.jpg);  
 }  
   
 #navbar ul li a:hover 
@@ -140,6 +140,6 @@ body
 	padding:10px;
 	font-size:0.8em;
 	margin:0;
-	color:;
+	color:#E6E6CC;
 }
 
