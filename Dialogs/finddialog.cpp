@@ -283,6 +283,7 @@ void FindDialog::initExpenseDialog()
     ui->findView->hideColumn(DBaseCtrl::Expense_Qty);
     ui->findView->hideColumn(DBaseCtrl::Expense_GST);
     ui->findView->hideColumn(DBaseCtrl::Expense_Desc);
+    ui->findView->hideColumn(DBaseCtrl::Expense_GST_CHCK);
     ui->findView->verticalHeader()->hide();
     ui->findView->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->findView->setSelectionBehavior(QAbstractItemView::SelectRows);

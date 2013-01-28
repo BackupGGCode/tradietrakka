@@ -92,7 +92,7 @@ void InvoiceWidget::sumTotals()
                 labourOnInvoiceModel->index(i, DBaseCtrl::LoI_VTotal),
                 Qt::DisplayRole).toDouble();
 
-
+    // Need to change this to handle other taxes including VAT, multiple taxes as well.
     int gst = (sum / 11.0) * 100;
     double transGST = gst / 100.00;
     ui->gstAmount->setText(QString::number(transGST, 'f', 2));

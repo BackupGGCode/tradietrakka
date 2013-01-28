@@ -758,10 +758,6 @@ bool DBaseCtrl::createTables()
         qWarning("Could not create PersonAtCompany table");
 
 
-    //****************************************
-    //*** CANT HAVE 2 AUTOINCREMENT FIELDS ***
-    //*** REMOVED AUTOINCREMENT FROM qNum  ***
-    //****************************************
     query.prepare("CREATE TABLE IF NOT EXISTS Quote "
                   "(id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, "
                   "qNum INTEGER, "
@@ -778,10 +774,6 @@ bool DBaseCtrl::createTables()
         qWarning("Could not create Quote table");
 
 
-    //****************************************
-    //*** CANT HAVE 2 AUTOINCREMENT FIELDS ***
-    //*** REMOVED AUTOINCREMENT FROM iNum  ***
-    //****************************************
     query.prepare("CREATE TABLE IF NOT EXISTS Invoice "
                   "(id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, "
                   "iNum INTEGER, "
@@ -800,10 +792,6 @@ bool DBaseCtrl::createTables()
         qWarning("Could not create Invoice table");
 
 
-    //****************************************
-    //*** CANT HAVE 2 AUTOINCREMENT FIELDS ***
-    //*** REMOVED AUTOINCREMENT FROM rNum  ***
-    //****************************************
     query.prepare("CREATE TABLE IF NOT EXISTS Receipt "
                   "(id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, "
                   "rDate TEXT NOT NULL, "
@@ -823,7 +811,8 @@ bool DBaseCtrl::createTables()
                   "amount INTEGER NOT NULL CHECK (amount >= 0), "
                   "gst INTEGER NOT NULL, "
                   "name VARCHAR(80) NOT NULL, "
-                  "description CLOB"
+                  "description CLOB, "
+                  "gstInc INTEGER NOT NULL "
                   ")");
 
     if(!query.exec())

@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>icons/watermark.png</file>
         <file>icons/folder_database.png</file>
-        <file alias="Logo">icons/logo.png</file>
         <file>icons/draw.png</file>
         <file alias="LogoSmall">icons/smallLogo.png</file>
         <file>icons/drawerFront.png</file>
@@ -29,5 +28,6 @@
         <file alias="Settings">icons/settings.png</file>
         <file alias="MaterialIcon">icons/materials.png</file>
         <file alias="BackGround">icons/bg.png</file>
+        <file alias="Logo">icons/tradietrakka.png</file>
     </qresource>
 </RCC>

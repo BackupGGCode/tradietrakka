@@ -1,0 +1,27 @@
+TradieTrakka Version 2 todo list
+
+Add backup and restore class
+	* compress tt file and output btt file
+	* uncompress btt file output tt file, recreating settings file if needed
+	
+Add prestart class
+	prestart checks for the presence and validity of the 
+	settings file and tt database file before the main application starts
+	making it cleaner and less memory hungry
+	* check for settings
+		* check for database
+		* check db version
+	* start wizard
+		* restore backup
+		* create new db file
+		* convert db file to newer version
+
+Add GST components
+
+Add Direct Email from TT
+	* Email quotes, invoices, receipts and over due notices
+
+Add Template Engine
+	* user modifiable template engine for quotes, invoices, receipts and notices
+
+Code Cleanup and re-factor

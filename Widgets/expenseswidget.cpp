@@ -53,6 +53,7 @@ ExpensesWidget::ExpensesWidget(DBaseCtrl *dbCtrl, int expenseID, QWidget *parent
     mapper->addMapping(ui->expenseGSTEdit, DBaseCtrl::Expense_GST);
     mapper->addMapping(ui->expenseTotalEdit, DBaseCtrl::Expense_Amount);
     mapper->addMapping(ui->descriptionEdit, DBaseCtrl::Expense_Desc);
+    mapper->addMapping(ui->expenseGstChkBox, DBaseCtrl::Expense_GST_CHCK);
 
     mapper->setCurrentModelIndex(expenseIndex);
     mapper->setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
@@ -67,7 +68,12 @@ ExpensesWidget::ExpensesWidget(DBaseCtrl *dbCtrl, int expenseID, QWidget *parent
     ui->expenseTotalEdit->setValidator(new QRegExpValidator(numRegex, this));
 
     double exPrice = model->data(model->index(expenseIndex.row(), DBaseCtrl::Expense_Amount)).toDouble();
-    ui->expensePriceEdit->setText(QString::number(exPrice / 11.0, 'f', 2));
+    if(ui->expenseGstChkBox->isChecked())
+    {
+        ui->expensePriceEdit->setText(QString::number((exPrice / 11.0) * 10, 'f', 2));
+    } else {
+        ui->expensePriceEdit->setText(QString::number(exPrice, 'f', 2));
+    }
 }
 
 ExpensesWidget::~ExpensesWidget()
@@ -81,9 +87,34 @@ void ExpensesWidget::submitData()
     mapper->submit();
 }
 
+void ExpensesWidget::on_expensePriceEdit_lostFocus()
+{
+    on_expensePriceEdit_returnPressed();
+}
+
+void ExpensesWidget::on_expensePriceEdit_returnPressed()
+{
+    double gstAmount = ui->expensePriceEdit->text().toDouble() / 10.0;
+    if(ui->expenseGstChkBox->isChecked())
+    {
+        ui->expenseGSTEdit->setText(QString::number(gstAmount, 'f', 2));
+    } else {
+        ui->expenseGSTEdit->setText("0.00");
+    }
+    ui->expenseTotalEdit->setText(QString::number(ui->expenseGSTEdit->text().toDouble() + ui->expensePriceEdit->text().toDouble(), 'f', 2));
+}
+
+void ExpensesWidget::on_expenseGstChkBox_clicked()
+{
+    on_expensePriceEdit_returnPressed();
+}
+
+void ExpensesWidget::on_expensePriceEdit_textEdited(const QString)
+{
+    on_expensePriceEdit_returnPressed();
+}
+
 void ExpensesWidget::on_expenseTotalEdit_lostFocus()
 {
-    double gstAmount = ui->expenseTotalEdit->text().toDouble() / 11.0;
-    ui->expenseGSTEdit->setText(QString::number(gstAmount, 'f', 2));
-    ui->expensePriceEdit->setText(QString::number(gstAmount * 10, 'f', 2));
+    on_expensePriceEdit_returnPressed();
 }

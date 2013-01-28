@@ -54,6 +54,10 @@ private:
 
 private slots:
     void on_expenseTotalEdit_lostFocus();
+    void on_expensePriceEdit_lostFocus();
+    void on_expensePriceEdit_returnPressed();
+    void on_expenseGstChkBox_clicked();
+    void on_expensePriceEdit_textEdited(const QString);
 };
 
 #endif // EXPENSESWIDGET_H

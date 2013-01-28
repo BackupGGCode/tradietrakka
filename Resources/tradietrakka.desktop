@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Exec=tradietrakka
+Icon=tradietrakka
+Terminal=false
+Name=TradieTrakka
+GenericName=Tradies Business Tool
+Categories=Office
+StartupNotify=true

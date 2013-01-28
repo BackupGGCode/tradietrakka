@@ -141,7 +141,8 @@ public:
         Expense_Amount = 3,
         Expense_GST = 4,
         Expense_Name = 5,
-        Expense_Desc = 6
+        Expense_Desc = 6,
+        Expense_GST_CHCK = 7
     };
 
     enum

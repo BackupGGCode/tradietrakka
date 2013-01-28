@@ -1,7 +1,7 @@
 # -------------------------------------------------
 # Project created by QtCreator 2010-06-01T14:53:02
 # -------------------------------------------------
-TARGET = TradieTrakka
+TARGET = tradietrakka
 TEMPLATE = app
 
 include(Dialogs/Dialogs.pri)
@@ -29,6 +29,8 @@ FORMS += mainwindow.ui
 RESOURCES += Resources/TradieTrakka.qrc
 QT += sql
 
+OTHER_FILES += Resources/tradietrakka.desktop
+
 win32{
 	CONFIG -= console
 	RC_FILE = Resources/icon.rc
@@ -37,3 +39,25 @@ win32{
 macx{
     ICON = Resources/icons/tt.icns
 }
+
+unix{
+    isEmpty(PREFIX) {
+        PREFIX = /usr
+    }
+    BINDIR = $$PREFIX/bin
+    DATADIR = $$PREFIX/share
+
+    INSTALLS += target desktop icon
+
+    target.path += $$BINDIR
+
+    desktop.path = $$DATADIR/applications
+    desktop.files += Resources/tradietrakka.desktop
+
+    icon.path = $$DATADIR/icons
+    icon.files += Resources/icons/tradietrakka.png
+}
+
+
+
+
