@@ -246,7 +246,9 @@ void MainWindow::aboutDialog()
     "TradieTrakka can look after Contacts, Quotes, Invoices and<br />"
     "Expenses.</p>"
     "<p><h4>Developers</h4>"
-    "&nbsp;&nbsp;&nbsp;&nbsp;Steven Tucker and Craig Hume"
+    "&nbsp;&nbsp;&nbsp;&nbsp;Steven Tucker and Craig Hume</p>"
+    "<p><h4>Artwork</h4>"
+    "&nbsp;&nbsp;&nbsp;&nbsp;Darcelle Hinze</p>"
     "<p>TradieTrakka is licensed under the GNU General Public License<br />"
     "version 3.0 <a href=\"http://www.gnu.org/licenses/gpl-3.0.html\">GNU General Public License</a></p>"
 

@@ -566,8 +566,8 @@ void MainWindow::initDefaultMenu()
 
     defaultMenuMachine->setInitialState(defaultMenuStates[OPEN]);
 
-    defaultMenuStates[OPEN]->assignProperty(defaultMenuItem, "pos", QPointF(15, -10));
-    defaultMenuStates[CLOSED]->assignProperty(defaultMenuItem, "pos", QPointF(15, -200));
+    defaultMenuStates[OPEN]->assignProperty(defaultMenuItem, "pos", QPointF(35, 25));
+    defaultMenuStates[CLOSED]->assignProperty(defaultMenuItem, "pos", QPointF(35, -200));
 
     defaultMenuTrans = new QAbstractTransition*[2];
     defaultMenuTrans[OPEN] = defaultMenuStates[CLOSED]->addTransition(this, SIGNAL(openDefaultMenu()),defaultMenuStates[OPEN]);
