@@ -240,7 +240,7 @@ void MainWindow::aboutDialog()
 
     "TradieTrakka",
     "<h3>About TradieTrakka</h3><br />"
-    "TradieTrakka 0.1"
+    "TradieTrakka 0.6"
     "<p>TradieTrakka is an application for tradesmen to quickly and<br />"
     "easily manage their business administration.<br />"
     "TradieTrakka can look after Contacts, Quotes, Invoices and<br />"

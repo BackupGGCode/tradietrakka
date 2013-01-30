@@ -56,6 +56,9 @@
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
          </property>
+         <property name="toolTip">
+          <string>Save</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -80,6 +83,9 @@
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
          </property>
+         <property name="toolTip">
+          <string>Print</string>
+         </property>
          <property name="text">
           <string/>
          </property>
@@ -103,6 +109,9 @@
         <widget class="QToolButton" name="closeButton">
          <property name="focusPolicy">
           <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="toolTip">
+          <string>Close</string>
          </property>
          <property name="text">
           <string>...</string>
@@ -234,7 +243,7 @@
      <x>0</x>
      <y>0</y>
      <width>772</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
