@@ -162,9 +162,6 @@ void MainWindow::closeEvent(QCloseEvent *event)
 /**
   *
   */
-/**
-  *
-  */
 void MainWindow::changeEvent(QEvent *e)
 {
     QMainWindow::changeEvent(e);
@@ -1084,28 +1081,34 @@ void MainWindow::on_pdfButton_clicked()
     InvoiceWidget *invoiceWidget = qobject_cast<InvoiceWidget *>(widget);
     ReportingWidget *reportingWidget = qobject_cast<ReportingWidget *>(widget);
 
+    int ret;
+
     if(homeWidget)
         return;
     else if(quoteWidget)
     {
         QMessageBox optionBox;
         optionBox.setText("Would you like a detailed Quote?");
-        optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes);
+        optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes |QMessageBox::Cancel);
         optionBox.setDefaultButton(QMessageBox::Yes);
 
-        if(optionBox.exec() == QMessageBox::Yes)
+        ret = optionBox.exec();
+
+        switch(ret)
         {
+        case QMessageBox::Yes:
             PrintComposer::printString(PrintComposer::quoteString(
                     quoteWidget->getQuoteId(), dbaseCtrl),
                     PrintComposer::PDF, dbaseCtrl->getLogo());
-        }
-        else
-        {
+            break;
+        case QMessageBox::No:
             PrintComposer::printString(PrintComposer::quoteString(
                     quoteWidget->getQuoteId(), dbaseCtrl, false),
                     PrintComposer::PDF, dbaseCtrl->getLogo());
+            break;
+        default:
+            break;
         }
-
     }
     else if(invoiceWidget)
     {
@@ -1114,17 +1117,22 @@ void MainWindow::on_pdfButton_clicked()
         optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes);
         optionBox.setDefaultButton(QMessageBox::Yes);
 
-        if(optionBox.exec() == QMessageBox::Yes)
+        ret = optionBox.exec();
+
+        switch(ret)
         {
+        case QMessageBox::Yes:
             PrintComposer::printString(PrintComposer::invoiceString(
                     invoiceWidget->getInvoiceID(), dbaseCtrl),
                     PrintComposer::PDF, dbaseCtrl->getLogo());
-        }
-        else
-        {
+            break;
+        case QMessageBox::No:
             PrintComposer::printString(PrintComposer::invoiceString(
                     invoiceWidget->getInvoiceID(), dbaseCtrl, false),
                     PrintComposer::PDF, dbaseCtrl->getLogo());
+            break;
+        default:
+            break;
         }
     }
     else if(receiptWidget)
@@ -1159,46 +1167,144 @@ void MainWindow::on_printButton_clicked()
     InvoiceWidget *invoiceWidget = qobject_cast<InvoiceWidget *>(widget);
     ReportingWidget *reportingWidget = qobject_cast<ReportingWidget *>(widget);
 
+    int ret;
+
     if(homeWidget)
         return;
     else if(quoteWidget)
     {
         QMessageBox optionBox;
         optionBox.setText("Would you like a detailed Quote?");
-        optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes);
+        optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel);
         optionBox.setDefaultButton(QMessageBox::Yes);
 
-        if(optionBox.exec() == QMessageBox::Yes)
+        ret = optionBox.exec();
+
+        switch(ret)
         {
+        case QMessageBox::Yes:
             PrintComposer::printString(PrintComposer::quoteString(
                     quoteWidget->getQuoteId(), dbaseCtrl),
                     PrintComposer::Print, dbaseCtrl->getLogo());
-        }
-        else
-        {
+            break;
+        case QMessageBox::No:
             PrintComposer::printString(PrintComposer::quoteString(
                     quoteWidget->getQuoteId(), dbaseCtrl, false),
                     PrintComposer::Print, dbaseCtrl->getLogo());
+        default:
+            break;
         }
     }
     else if(invoiceWidget)
     {
         QMessageBox optionBox;
         optionBox.setText("Would you like a detailed Quote?");
-        optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes);
+        optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel);
         optionBox.setDefaultButton(QMessageBox::Yes);
 
-        if(optionBox.exec() == QMessageBox::Yes)
+        ret = optionBox.exec();
+
+        switch(ret)
         {
+        case QMessageBox::Yes:
             PrintComposer::printString(PrintComposer::invoiceString(
                     invoiceWidget->getInvoiceID(), dbaseCtrl),
                     PrintComposer::Print, dbaseCtrl->getLogo());
-        }
-        else
-        {
+            break;
+        case QMessageBox::No:
             PrintComposer::printString(PrintComposer::invoiceString(
                     invoiceWidget->getInvoiceID(), dbaseCtrl, false),
                     PrintComposer::Print, dbaseCtrl->getLogo());
+            break;
+        default:
+            break;
+        }
+    }
+    else if(receiptWidget)
+    {
+        PrintComposer::printString(PrintComposer::receiptString(
+                receiptWidget->getReceiptID(), dbaseCtrl),PrintComposer::Print, dbaseCtrl->getLogo());
+    }
+    else if(expenseWidget)
+    {
+        expenseWidget->submitData();
+        PrintComposer::printString(PrintComposer::expenseString(
+                expenseWidget->getExpenseID(), dbaseCtrl),PrintComposer::Print, dbaseCtrl->getLogo());
+    }
+    else if(reportingWidget)
+    {
+        PrintComposer::printString(reportingWidget->getHtml(),
+                                   PrintComposer::Print, dbaseCtrl->getLogo());
+    }
+}
+
+void MainWindow::on_emailButton_clicked()
+{
+    int index = ui->stackedWidget->currentIndex();
+
+    QWidget *widget = ui->stackedWidget->widget(index);
+    HomeWidget *homeWidget = qobject_cast<HomeWidget *>(widget);
+    QuoteWidget *quoteWidget = qobject_cast<QuoteWidget *>(widget);
+    ReceiptWidget *receiptWidget = qobject_cast<ReceiptWidget *>(widget);
+    ExpensesWidget *expenseWidget = qobject_cast<ExpensesWidget *>(widget);
+    InvoiceWidget *invoiceWidget = qobject_cast<InvoiceWidget *>(widget);
+    ReportingWidget *reportingWidget = qobject_cast<ReportingWidget *>(widget);
+
+    int ret;
+
+    if(homeWidget)
+        return;
+    else if(quoteWidget)
+    {
+        QMessageBox optionBox;
+        optionBox.setText("Would you like a detailed Quote?");
+        optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel);
+        optionBox.setDefaultButton(QMessageBox::Yes);
+
+        ret = optionBox.exec();
+        switch(ret)
+        {
+        case QMessageBox::Yes:
+            PrintComposer::printString(PrintComposer::quoteString(
+                    quoteWidget->getQuoteId(), dbaseCtrl),
+                    PrintComposer::Print, dbaseCtrl->getLogo());
+            break;
+        case QMessageBox::No:
+            PrintComposer::printString(PrintComposer::quoteString(
+                    quoteWidget->getQuoteId(), dbaseCtrl, false),
+                    PrintComposer::Print, dbaseCtrl->getLogo());
+            break;
+        case QMessageBox::Cancel:
+            break;
+        default:
+            break;
+        }
+
+    }
+    else if(invoiceWidget)
+    {
+        QMessageBox optionBox;
+        optionBox.setText("Would you like a detailed Quote?");
+        optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel);
+        optionBox.setDefaultButton(QMessageBox::Yes);
+
+        ret = optionBox.exec();
+        switch(ret)
+        {
+        case QMessageBox::Yes:
+            PrintComposer::printString(PrintComposer::invoiceString(
+                    invoiceWidget->getInvoiceID(), dbaseCtrl),
+                    PrintComposer::Print, dbaseCtrl->getLogo());
+            break;
+        case QMessageBox::No:
+            PrintComposer::printString(PrintComposer::invoiceString(
+                    invoiceWidget->getInvoiceID(), dbaseCtrl, false),
+                    PrintComposer::Print, dbaseCtrl->getLogo());
+            break;
+        case QMessageBox::Cancel:
+            break;
+        default:
+            break;
         }
     }
     else if(receiptWidget)

@@ -31,11 +31,11 @@ HomeWidget::HomeWidget(QSqlDatabase dbase, QWidget *parent) :
     this->dbase = dbase;
     ui->setupUi(this);
 
-    //QPalette palette;
-    //pixmap = QPixmap(":/BackGround");
+    QPalette palette;
+    pixmap = QPixmap(":/BackGround");
 
-    //palette.setBrush(this->backgroundRole(), QBrush(pixmap));
-    //this->setPalette(palette);
+    palette.setBrush(this->backgroundRole(), QBrush(pixmap));
+    this->setPalette(palette);
     setAutoFillBackground(true);
 }
 

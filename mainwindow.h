@@ -234,6 +234,7 @@ public slots:
 private slots:
     void on_printButton_clicked();
     void on_pdfButton_clicked();
+    void on_emailButton_clicked();
     void on_closeButton_clicked();
     void findContacts(ContactDialog::contactType);
     void findContacts();
@@ -244,5 +245,3 @@ private slots:
 };
 
 #endif // MAINWINDOW_H
-
-

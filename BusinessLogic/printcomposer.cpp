@@ -22,7 +22,7 @@
 #include <QSqlError>
 #include <QDate>
 #include <QUrl>
-#include <QDebug>
+//#include <QDebug>
 #include <QPrinter>
 #include <QSqlQuery>
 #include <QFileDialog>
@@ -39,7 +39,7 @@ void PrintComposer::printString(QString html, PrintComposer::OutputType outputTy
 
     output.addResource(QTextDocument::ImageResource, QUrl("logo://logo"), QVariant(logo));
 
-    qDebug() << html;
+    //qDebug() << html;
 
     if(outputType == PrintComposer::Print)
     {
