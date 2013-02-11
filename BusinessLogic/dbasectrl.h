@@ -28,6 +28,7 @@
 #include "csqltablemodel.h"
 
 #include <QSqlTableModel>
+#include <QStringList>
 #include <QSqlRelationalTableModel>
 #include <QObject>
 #include <QFont>
@@ -295,6 +296,8 @@ public:
     QSqlQueryModel *getSingleInvoiceModel(int invoiceID);
     QSqlQueryModel *getSingleReceiptModel(int receiptID);
     QSqlQueryModel *getSingleExpenseModel(int expenseID);
+
+    QStringList getQuoteEmailAndNum(int quoteID);
 
     int getNumberOfOverDue();
 

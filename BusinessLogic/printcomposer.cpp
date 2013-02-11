@@ -22,17 +22,28 @@
 #include <QSqlError>
 #include <QDate>
 #include <QUrl>
-//#include <QDebug>
+#include <QDebug>
+#include <QProcess>
 #include <QPrinter>
+#include <QStringList>
 #include <QSqlQuery>
 #include <QFileDialog>
 #include <QPrintDialog>
 #include <QTextDocument>
 
 /**
+ *
+ */
+QStringList PrintComposer::getEmailAndNum(int quoteID, DBaseCtrl *baseCtrl)
+{
+    QStringList emailAndNum = baseCtrl->getQuoteEmailAndNum(quoteID);
+    return emailAndNum;
+}
+
+/**
   *
   */
-void PrintComposer::printString(QString html, PrintComposer::OutputType outputType, QImage logo)
+void PrintComposer::printString(QString html, PrintComposer::OutputType outputType, QImage logo, QString mailAddr, QString invoiceNum)
 {
     QPrinter printer;
     QTextDocument output;
@@ -41,8 +52,10 @@ void PrintComposer::printString(QString html, PrintComposer::OutputType outputTy
 
     //qDebug() << html;
 
-    if(outputType == PrintComposer::Print)
+    QString fileName;
+    switch(outputType)
     {
+    case PrintComposer::Print:{
         QPrintDialog printDialog(&printer);
         if(printDialog.exec())
         {
@@ -50,11 +63,11 @@ void PrintComposer::printString(QString html, PrintComposer::OutputType outputTy
             output.setHtml(html);
             output.print(&printer);
         }
+        break;
     }
-    else
-    {
+    case PrintComposer::PDF:{
         printer.setOutputFormat(QPrinter::PdfFormat);
-        QString fileName = QFileDialog::getSaveFileName(0, "Save PDF", QDir::homePath(), "*.pdf");
+        fileName = QFileDialog::getSaveFileName(0, "Save PDF", QDir::homePath(), "*.pdf");
         if(!fileName.isEmpty())
         {
             if(!fileName.endsWith(".pdf"))
@@ -65,6 +78,28 @@ void PrintComposer::printString(QString html, PrintComposer::OutputType outputTy
             output.setHtml(html);
             output.print(&printer);
         }
+        break;
+    }
+    case PrintComposer::Email: {
+
+        QString progArgs;
+
+        progArgs += "to='"+ mailAddr +"',"
+                    "subject='Invoice "+ invoiceNum +"',body='"+ html +"'";
+
+        QStringList argList;
+        argList << "-compose" << progArgs;
+
+        bool success = QProcess::startDetached(QString("thunderbird"), argList);
+        if(!success)
+        {
+            // Need to replace with a user visable warning, such as a QMessageBox
+            qDebug() << "Could not start Thunderbird";
+        }
+        break;
+    }
+    default:
+        break;
     }
 }
 

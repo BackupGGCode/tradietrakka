@@ -36,11 +36,12 @@ public:
             quoteFooter, invoiceHeader, invoiceFooter;
 
     PrintComposer();
-    enum OutputType {PDF, Print};
+    enum OutputType {PDF, Print, Email};
     enum PrintType {Quote, Invoice, Receipt, Company, Person, BAS, PandL, Breakdown};
     enum TableType {Materials, Labour};
 
-    static void printString(QString html, OutputType outputType, QImage logo);
+    static QStringList getEmailAndNum(int quoteID, DBaseCtrl *baseCtrl);
+    static void printString(QString html, PrintComposer::OutputType outputType, QImage logo, QString mailAddr = "", QString invoiceNum = "");
 
     static QString quoteString(int quoteID, DBaseCtrl *dbCtrl, bool detail = true);
     static QString invoiceString(int invoiceID, DBaseCtrl *dbCtrl, bool detail = true);

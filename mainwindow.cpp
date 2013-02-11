@@ -1261,21 +1261,32 @@ void MainWindow::on_emailButton_clicked()
         optionBox.setStandardButtons(QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel);
         optionBox.setDefaultButton(QMessageBox::Yes);
 
+        // Get the Email address and Quote Number
+        QStringList emailAddr = PrintComposer::getEmailAndNum(quoteWidget->getQuoteId(), dbaseCtrl);
         ret = optionBox.exec();
         switch(ret)
         {
-        case QMessageBox::Yes:
+        case QMessageBox::Yes: {
+            QStringList::Iterator iter = emailAddr.begin();
+            QString eMail = *iter;
+            QString quoteNum = *(++iter);
             PrintComposer::printString(PrintComposer::quoteString(
                     quoteWidget->getQuoteId(), dbaseCtrl),
-                    PrintComposer::Print, dbaseCtrl->getLogo());
+                                       PrintComposer::Email, dbaseCtrl->getLogo(), eMail, quoteNum);
             break;
-        case QMessageBox::No:
+        }
+        case QMessageBox::No: {
+            QStringList::Iterator iter = emailAddr.begin();
+            QString eMail = *iter;
+            QString quoteNum = *(++iter);
             PrintComposer::printString(PrintComposer::quoteString(
                     quoteWidget->getQuoteId(), dbaseCtrl, false),
-                    PrintComposer::Print, dbaseCtrl->getLogo());
+                    PrintComposer::Email, dbaseCtrl->getLogo(), eMail, quoteNum);
             break;
-        case QMessageBox::Cancel:
+        }
+        case QMessageBox::Cancel: {
             break;
+        }
         default:
             break;
         }
@@ -1294,12 +1305,12 @@ void MainWindow::on_emailButton_clicked()
         case QMessageBox::Yes:
             PrintComposer::printString(PrintComposer::invoiceString(
                     invoiceWidget->getInvoiceID(), dbaseCtrl),
-                    PrintComposer::Print, dbaseCtrl->getLogo());
+                    PrintComposer::Email, dbaseCtrl->getLogo());
             break;
         case QMessageBox::No:
             PrintComposer::printString(PrintComposer::invoiceString(
                     invoiceWidget->getInvoiceID(), dbaseCtrl, false),
-                    PrintComposer::Print, dbaseCtrl->getLogo());
+                    PrintComposer::Email, dbaseCtrl->getLogo());
             break;
         case QMessageBox::Cancel:
             break;
@@ -1310,18 +1321,18 @@ void MainWindow::on_emailButton_clicked()
     else if(receiptWidget)
     {
         PrintComposer::printString(PrintComposer::receiptString(
-                receiptWidget->getReceiptID(), dbaseCtrl),PrintComposer::Print, dbaseCtrl->getLogo());
+                receiptWidget->getReceiptID(), dbaseCtrl),PrintComposer::Email, dbaseCtrl->getLogo());
     }
     else if(expenseWidget)
     {
         expenseWidget->submitData();
         PrintComposer::printString(PrintComposer::expenseString(
-                expenseWidget->getExpenseID(), dbaseCtrl),PrintComposer::Print, dbaseCtrl->getLogo());
+                expenseWidget->getExpenseID(), dbaseCtrl),PrintComposer::Email, dbaseCtrl->getLogo());
     }
     else if(reportingWidget)
     {
         PrintComposer::printString(reportingWidget->getHtml(),
-                                   PrintComposer::Print, dbaseCtrl->getLogo());
+                                   PrintComposer::Email, dbaseCtrl->getLogo());
     }
 }
 

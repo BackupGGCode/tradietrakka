@@ -494,6 +494,17 @@ QSqlQueryModel* DBaseCtrl::getSingleExpenseModel(int expenseID)
     return singleExpenseModel;
 }
 
+QStringList DBaseCtrl::getQuoteEmailAndNum(int quoteID)
+{
+    // Need to select email and id from Quote
+    // and place into QStringList
+
+    QStringList emailAndNum;
+    emailAndNum << "a_name@a_domain.com" << "123456";
+
+    return emailAndNum;
+}
+
 int DBaseCtrl::getNumberOfOverDue()
 {
     int overDue;
