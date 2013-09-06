@@ -27,7 +27,9 @@ HEADERS += mainwindow.h \
 FORMS += mainwindow.ui
 
 RESOURCES += Resources/TradieTrakka.qrc
-QT += sql
+QT += sql \
+      widgets \
+      printsupport
 
 OTHER_FILES += Resources/tradietrakka.desktop
 

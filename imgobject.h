@@ -21,7 +21,8 @@
 #ifndef IMGOBJECT_H
 #define IMGOBJECT_H
 
-#include <QtGui>
+//#include <QtGui>
+#include <QtWidgets>
 
 class ImgObject : public QGraphicsObject
 {

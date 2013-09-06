@@ -77,22 +77,28 @@ void MainWindow::initPaper()
 
 
     paperStates[quotes]->assignProperty(paperItem, "pos", QPointF(PAPER_X_OFFSET, Y_OFFSET + QUOTE_PAPER_Y_OFFSET));
-    paperStates[quotes]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(65));
+    paperStates[quotes]->assignProperty(paperRotation, "andle", QVariant::fromValue(65));
+    //paperStates[quotes]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(65));
 
     paperStates[invoices]->assignProperty(paperItem, "pos", QPointF(PAPER_X_OFFSET, Y_OFFSET + INVOICE_Y_OFFSET + QUOTE_PAPER_Y_OFFSET));
-    paperStates[invoices]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(75));
+    //paperStates[invoices]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(75));
+    paperStates[invoices]->assignProperty(paperRotation, "angle", QVariant::fromValue(75));
 
     paperStates[receipts]->assignProperty(paperItem, "pos", QPointF(PAPER_X_OFFSET, Y_OFFSET + RECEIPTS_Y_OFFSET + QUOTE_PAPER_Y_OFFSET));
-    paperStates[receipts]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(68));
+    //paperStates[receipts]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(68));
+    paperStates[receipts]->assignProperty(paperRotation, "angle", QVariant::fromValue(68));
 
     paperStates[expenses]->assignProperty(paperItem, "pos", QPointF(PAPER_X_OFFSET, Y_OFFSET + EXPENSES_Y_OFFSET + QUOTE_PAPER_Y_OFFSET));
-    paperStates[expenses]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(68));
+    //paperStates[expenses]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(68));
+    paperStates[expenses]->assignProperty(paperRotation, "angle", QVariant::fromValue(68));
 
     paperStates[reports]->assignProperty(paperItem, "pos", QPointF(PAPER_X_OFFSET, Y_OFFSET + REPORTS_Y_OFFSET + QUOTE_PAPER_Y_OFFSET));
-    paperStates[reports]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(68));
+    //paperStates[reports]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(68));
+    paperStates[reports]->assignProperty(paperRotation, "angle", QVariant::fromValue(68));
 
     paperStates[5]->assignProperty(paperItem, "pos", QPointF(PAPER_X_OFFSET, Y_OFFSET + 300));
-    paperStates[5]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(0));
+    //paperStates[5]->assignProperty(paperRotation, "angle", qVariantValue<qreal>(0));
+    paperStates[5]->assignProperty(paperRotation, "angle", QVariant::fromValue(0));
 
     paperStates[5]->addTransition(this, SIGNAL(quotePaperPos()), paperStates[quotes]);
     paperTrans[quotes] = paperStates[5]->addTransition(this, SIGNAL(paperToQuote()), paperStates[quotes]);
